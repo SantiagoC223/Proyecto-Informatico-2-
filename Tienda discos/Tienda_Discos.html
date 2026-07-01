@@ -59,6 +59,7 @@
             <a href="https://www.youtube.com/watch?v=mx42ZBl6-N4">
                 <img src = "C:\Users\Redes-20\Desktop\Tienda discos\Carpeta de Imagenes\StifieThoven.jpg" id = "StiffyThoven" alt="Stiffythoven" width="200" height="200">
             </a>
+            
             <button onclick = "Agregar_Producto(500,'StiffieThoven Disk')">Agregar al carrito</button>
         </div>
            
@@ -122,32 +123,44 @@
 
                 <div class="producto">
                     <img src = "C:\Users\Redes-20\Desktop\Tienda discos\Carpeta de Imagenes\DEQUESERIEDIOS.jpg" alt="De que se rie Dios ?" width="300" height="300">
+                    <button onclick = "Tapa_Blanda()">Tapa Blanda</button>
+                    <button onclick = "Tapa_Dura()">Tapa Dura</button>
                     <button onclick = "Agregar_Producto(1100,'De que se rie Dios ?')">Agregar al carrito</button>
                 </div>
 
                 <div class="producto">
                     <img src = "C:\Users\Redes-20\Desktop\Tienda discos\Carpeta de Imagenes\HERMANAS.jpg" alt="Hermanas" width="300" height="300">
+                    <button onclick = "Tapa_Blanda()">Tapa Blanda</button>
+                    <button onclick = "Tapa_Dura()">Tapa Dura</button>
                     <button onclick = "Agregar_Producto(1500,'Hermanas')">Agregar al carrito</button>
                 </div>
 
                 <div class="producto">
                     <img src = "C:\Users\Redes-20\Desktop\Tienda discos\Carpeta de Imagenes\ELELOGIODELASVAGABUNDAS.jpg" alt="El elogio de las Vagabundas" width="300" height="300">
+                    <button onclick = "Tapa_Blanda()">Tapa Blanda</button>
+                    <button onclick = "Tapa_Dura()">Tapa Dura</button>
                     <button onclick = "Agregar_Producto(1200,'El elogio de las Vagabundas')">Agregar al carrito</button>
                 </div>
 
 
                 <div class="producto">
                     <img src = "C:\Users\Redes-20\Desktop\Tienda discos\Carpeta de Imagenes\LAMENTEMILLONARIA.jpg" alt="La Mente Millonaria" width="300" height="300">
+                    <button onclick = "Tapa_Blanda()">Tapa Blanda</button>
+                    <button onclick = "Tapa_Dura()">Tapa Dura</button>
                     <button onclick ="Agregar_Producto(500,'La Mente Millonaria')">Agregar al carrito</button>
                 </div>
 
                 <div class="producto">
                     <img src = "C:\Users\Redes-20\Desktop\Tienda discos\Carpeta de Imagenes\LCYEDL.png" alt="Los Compas y el Diamantito Legendario" width="300" height="300">
+                    <button onclick = "Tapa_Blanda()">Tapa Blanda</button>
+                    <button onclick = "Tapa_Dura()">Tapa Dura</button>
                     <button onclick ="Agregar_Producto(700,'Los Compas y el Diamantito Legendario')">Agregar al carrito</button>
                 </div>
 
                 <div class="producto">
                     <img src = "C:\Users\Redes-20\Desktop\Tienda discos\Carpeta de Imagenes\WW2.jpg" alt="Lo que no te contaron de la Segunda Guerra Mundial" width="300" height="300">
+                    <button onclick = "Tapa_Blanda()">Tapa Blanda</button>
+                    <button onclick = "Tapa_Dura()">Tapa Dura</button>
                     <button onclick="Agregar_Producto(300,'Lo que no te contaron de la Segunda Guerra Mundial')">Agregar al carrito</button>
                 </div>
             </div>
@@ -163,6 +176,8 @@
        
 
 
+
+
         <script>
 
             
@@ -173,21 +188,12 @@
             let Lista_Productos = [] ;
             let Lista_Precios = [] ;
 
-            function Agregar_Producto(Precio,Nombre_Producto,SCR){
+            function Agregar_Producto(Precio,Nombre_Producto){
                 Total = Total + Precio;
                 Lista_Productos.push(Nombre_Producto);
                 Lista_Precios.push(Precio);
                 
                 const ItemExistente = Contenedor_Carrito.find(item => item.Nombre_Producto === Nombre_Producto)
-            }
-
-
-
-
-            function Mostrar_Total() {
-
-
-                alert(Total);
             }
 
 
@@ -209,7 +215,6 @@
                 for(let i = 0 ; i < Lista_Productos.length; i++ ){
                     document.write('______________________________<br>');
                     
-                     document.write( Lista_Img_Link[i]  + '<br>');
 
                     document.write(Lista_Productos[i] +' -     Precio : $'+ Lista_Precios[i] + '<br>');
                     document.write('______________________________<br>');
@@ -221,8 +226,15 @@
 
             }
 
+            function Tapa_Blanada(){
+                alert('Blanda');
+            }
 
-           
+            function Tapa_Dura(){
+                alert('Dura');
+            }
+            
+            
 
 
     </script>
