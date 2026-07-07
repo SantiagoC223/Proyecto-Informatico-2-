@@ -12,35 +12,38 @@
            
             float:left;
         }
-    </style>
+  
+        .Libro{
+            height: 300px;
+            width: 200px;
+            background: rgba(63, 63, 63, 0.39);
+            float:left;
+        }
 
-
-
-
-    <style>
         .Contenedor_Productos{
             display:flex;
             flex-wrap:wrap;
             gap:20px;
         }
-    </style>
 
-
-    <style>
         .Contenedor_Libros{
             display:flex;
             flex-wrap:wrap;
             gap:120px;
         }
-    </style>
 
-    <style>
         .Contenedor_Carrito{
             display:flex;
             flex-wrap:wrap;
             gap:20px;
             margin-top: 100px;
         }
+
+        .txt_precio_inicial{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 14px;
+        }
+
     </style>
 
 
@@ -57,7 +60,7 @@
     <div class="Contenedor_Productos">
         <div class="producto">
             <a href="https://www.youtube.com/watch?v=mx42ZBl6-N4">
-                <img src = "C:\Users\Redes-20\Desktop\Tienda discos\Carpeta de Imagenes\StifieThoven.jpg" id = "StiffyThoven" alt="Stiffythoven" width="200" height="200">
+                <img src = "C:\Users\Redes-20\Desktop\Proyecto-Informatico-2--main\Tienda discos\Carpeta de Imagenes\StifieThoven.jpg" id = "StiffyThoven" alt="Stiffythoven" width="200" height="200">
             </a>
             
             <button onclick = "Agregar_Producto(500,'StiffieThoven Disk')">Agregar al carrito</button>
@@ -65,7 +68,7 @@
            
         <div class="producto">
             <a href="https://www.youtube.com/watch?v=ThNmW-c6zdU&list=RDThNmW-c6zdU&start_radio=1">
-                <img src = "C:\Users\Redes-20\Desktop\Tienda discos\Carpeta de Imagenes\DTM.jpg" alt="DTMOST" width="200" height="200">
+                <img src = "C:\Users\Redes-20\Desktop\Proyecto-Informatico-2--main\Tienda discos\Carpeta de Imagenes\DTM.jpg" alt="DTMOST" width="200" height="200">
             </a>
             <button onclick = "Agregar_Producto(700,'Dan The Man Oficial Ost Disk')">Agregar al carrito</button>
         </div>
@@ -73,21 +76,21 @@
 
         <div class="producto">
             <a href="https://www.youtube.com/watch?v=XBOyLcEEDa0&list=RDXBOyLcEEDa0&start_radio=1">
-                <img src = "C:\Users\Redes-20\Desktop\Tienda discos\Carpeta de Imagenes\duki.jpg" alt="Lata con Plata" width="200" height="200">
+                <img src = "C:\Users\Redes-20\Desktop\Proyecto-Informatico-2--main\Tienda discos\Carpeta de Imagenes\duki.jpg" alt="Lata con Plata" width="200" height="200">
             </a>
             <button onclick = "Agregar_Producto(500,'duki1')">Agregar al carrito</button>
         </div>
 
         <div class="producto">
             <a href="https://www.youtube.com/watch?v=J6VYKkWYn9E">
-                <img src = "C:\Users\Redes-20\Desktop\Tienda discos\Carpeta de Imagenes\Salamaracara.jpg" alt="heráldica" width="200" height="200">
+                <img src = "C:\Users\Redes-20\Desktop\Proyecto-Informatico-2--main\Tienda discos\Carpeta de Imagenes\Salamaracara.jpg" alt="heráldica" width="200" height="200">
             </a>
             <button onclick = "Agregar_Producto(1100,'Salamalacara Disk')">Agregar al carrito</button>
         </div>
 
         <div class="producto">
             <a href="https://www.youtube.com/watch?v=5uwvKuupEhw&list=RD5uwvKuupEhw&start_radio=1">
-                <img src = "C:\Users\Redes-20\Desktop\Tienda discos\Carpeta de Imagenes\HK.jpg" alt="Hollow Knight Ost" width="200" height="200">
+                <img src = "C:\Users\Redes-20\Desktop\Proyecto-Informatico-2--main\Tienda discos\Carpeta de Imagenes\HK.jpg" alt="Hollow Knight Ost" width="200" height="200">
             </a>
             <button onclick = "Agregar_Producto(1500,'Hollow Knight Oficial OST Disk')">Agregar al carrito</button>
 
@@ -95,7 +98,7 @@
 
         <div class="producto">
             <a href="https://www.youtube.com/watch?v=Cn-HQvN0grI&list=RDCn-HQvN0grI&start_radio=1">
-                <img src = "C:\Users\Redes-20\Desktop\Tienda discos\Carpeta de Imagenes\duki2.jpg" alt="5202" width="200" height="200">      
+                <img src = "C:\Users\Redes-20\Desktop\Proyecto-Informatico-2--main\Tienda discos\Carpeta de Imagenes\duki2.jpg" alt="5202" width="200" height="200">      
             </a>
             <button onclick = "Agregar_Producto(500,'duki2')">Agregar al carrito</button>
         </div>
@@ -108,12 +111,12 @@
         <p>
       <h2>Stickers</h12>
         <p>
-            <img src = "C:\Users\Redes-20\Desktop\Tienda discos\Carpeta de Imagenes\wachin.jpg" alt="Wachin" title="Wachin" width="100" height="100">
-            <img src = "C:\Users\Redes-20\Desktop\Tienda discos\Carpeta de Imagenes\MOMO.png" alt="Momo Anashe" title="Momo Anashe" width="100" height="100">
-            <img src = "C:\Users\Redes-20\Desktop\Tienda discos\Carpeta de Imagenes\PePe.png" alt="Perro Pendejo" title="Perro Pendejo" width="100" height="100">
-            <img src = "C:\Users\Redes-20\Desktop\Tienda discos\Carpeta de Imagenes\YAVEO.jpg" alt="Ya veo" title="Ya Veo" width="100" height="100">        
-            <img src = "C:\Users\Redes-20\Desktop\Tienda discos\Carpeta de Imagenes\SIGMA.jpg" alt="Sigma" title="Sigma" width="100" height="100">        
-            <img src = "C:\Users\Redes-20\Desktop\Tienda discos\Carpeta de Imagenes\Pala.jpeg" alt="pala" title="Pala" width="100" height="100">        
+            <img src = "C:\Users\Redes-20\Desktop\Proyecto-Informatico-2--main\Tienda discos\Carpeta de Imagenes\wachin.jpg" alt="Wachin" title="Wachin" width="100" height="100">
+            <img src = "C:\Users\Redes-20\Desktop\Proyecto-Informatico-2--main\Tienda discos\Carpeta de Imagenes\MOMO.png" alt="Momo Anashe" title="Momo Anashe" width="100" height="100">
+            <img src = "C:\Users\Redes-20\Desktop\Proyecto-Informatico-2--main\Tienda discos\Carpeta de Imagenes\PePe.png" alt="Perro Pendejo" title="Perro Pendejo" width="100" height="100">
+            <img src = "C:\Users\Redes-20\Desktop\Proyecto-Informatico-2--main\Tienda discos\Carpeta de Imagenes\YAVEO.jpg" alt="Ya veo" title="Ya Veo" width="100" height="100">        
+            <img src = "C:\Users\Redes-20\Desktop\Proyecto-Informatico-2--main\Tienda discos\Carpeta de Imagenes\SIGMA.jpg" alt="Sigma" title="Sigma" width="100" height="100">        
+            <img src = "C:\Users\Redes-20\Desktop\Proyecto-Informatico-2--main\Tienda discos\Carpeta de Imagenes\Pala.jpeg" alt="pala" title="Pala" width="100" height="100">        
 
 
         <h2>Libros</h12>
@@ -121,47 +124,69 @@
         <p>
             <div class="Contenedor_Libros">
 
-                <div class="producto">
-                    <img src = "C:\Users\Redes-20\Desktop\Tienda discos\Carpeta de Imagenes\DEQUESERIEDIOS.jpg" alt="De que se rie Dios ?" width="300" height="300">
-                    <button onclick = "Tapa_Blanda()">Tapa Blanda</button>
-                    <button onclick = "Tapa_Dura()">Tapa Dura</button>
+                <div class="Libro">
+                    <img src = "C:\Users\Redes-20\Desktop\Proyecto-Informatico-2--main\Tienda discos\Carpeta de Imagenes\DEQUESERIEDIOS.jpg" alt="De que se rie Dios ?" width="300" height="300">
                     <button onclick = "Agregar_Producto(1100,'De que se rie Dios ?')">Agregar al carrito</button>
+                    <h1></h1>
+                    <input type="radio" id = "blanda" name="TipoTapa" value="10000" onclick="Tapa_Blanda()">Tapa Blanda
+                    <br>
+                    <input type = "radio" id ="dura" name ="TipoTapa" value ="50000" onclick="valorTapaDura()">Tapa Dura
                 </div>
 
-                <div class="producto">
-                    <img src = "C:\Users\Redes-20\Desktop\Tienda discos\Carpeta de Imagenes\HERMANAS.jpg" alt="Hermanas" width="300" height="300">
-                    <button onclick = "Tapa_Blanda()">Tapa Blanda</button>
-                    <button onclick = "Tapa_Dura()">Tapa Dura</button>
+                <div class="Libro">
+                    <img src = "C:\Users\Redes-20\Desktop\Proyecto-Informatico-2--main\Tienda discos\Carpeta de Imagenes\HERMANAS.jpg" alt="Hermanas" width="300" height="300">
                     <button onclick = "Agregar_Producto(1500,'Hermanas')">Agregar al carrito</button>
+                    <h1></h1>
+                    
+                    <input type="radio" id = "blanda" name="TipoTapa" value="10000" onclick="Tapa_Blanda()">Tapa Blanda
+                    <br>
+                    <input type = "radio" id ="dura" name ="TipoTapa" value ="50000" onclick="valorTapaDura()">Tapa Dura
                 </div>
 
-                <div class="producto">
-                    <img src = "C:\Users\Redes-20\Desktop\Tienda discos\Carpeta de Imagenes\ELELOGIODELASVAGABUNDAS.jpg" alt="El elogio de las Vagabundas" width="300" height="300">
-                    <button onclick = "Tapa_Blanda()">Tapa Blanda</button>
-                    <button onclick = "Tapa_Dura()">Tapa Dura</button>
+                <div class="Libro">
+                    <img src = "C:\Users\Redes-20\Desktop\Proyecto-Informatico-2--main\Tienda discos\Carpeta de Imagenes\ELELOGIODELASVAGABUNDAS.jpg" alt="El elogio de las Vagabundas" width="300" height="300">
                     <button onclick = "Agregar_Producto(1200,'El elogio de las Vagabundas')">Agregar al carrito</button>
+                    <h1></h1>
+                    
+                    <input type="radio" id = "blanda" name="TipoTapa" value="10000" onclick="Tapa_Blanda()">Tapa Blanda
+                    <br>
+                    <input type = "radio" id ="dura" name ="TipoTapa" value ="50000" onclick="valorTapaDura()">Tapa Dura
                 </div>
 
 
-                <div class="producto">
-                    <img src = "C:\Users\Redes-20\Desktop\Tienda discos\Carpeta de Imagenes\LAMENTEMILLONARIA.jpg" alt="La Mente Millonaria" width="300" height="300">
-                    <button onclick = "Tapa_Blanda()">Tapa Blanda</button>
-                    <button onclick = "Tapa_Dura()">Tapa Dura</button>
+                <div class="Libro">
+                    <img src = "C:\Users\Redes-20\Desktop\Proyecto-Informatico-2--main\Tienda discos\Carpeta de Imagenes\LAMENTEMILLONARIA.jpg" alt="La Mente Millonaria" width="300" height="300">
                     <button onclick ="Agregar_Producto(500,'La Mente Millonaria')">Agregar al carrito</button>
+                    <h1></h1>
+                    
+                    <input type="radio" id = "blanda" name="TipoTapa" value="10000" onclick="Tapa_Blanda()">Tapa Blanda
+                    <br>
+                    <input type = "radio" id ="dura" name ="TipoTapa" value ="50000" onclick="valorTapaDura()">Tapa Dura
                 </div>
 
-                <div class="producto">
-                    <img src = "C:\Users\Redes-20\Desktop\Tienda discos\Carpeta de Imagenes\LCYEDL.png" alt="Los Compas y el Diamantito Legendario" width="300" height="300">
-                    <button onclick = "Tapa_Blanda()">Tapa Blanda</button>
-                    <button onclick = "Tapa_Dura()">Tapa Dura</button>
+                <div class="Libro">
+                    <img src = "C:\Users\Redes-20\Desktop\Proyecto-Informatico-2--main\Tienda discos\Carpeta de Imagenes\LCYEDL.png" alt="Los Compas y el Diamantito Legendario" width="300" height="300">
                     <button onclick ="Agregar_Producto(700,'Los Compas y el Diamantito Legendario')">Agregar al carrito</button>
+                    <h1></h1>
+                    
+                    <input type="radio" id = "blanda" name="TipoTapa" value="10000" onclick="Tapa_Blanda()">Tapa Blanda
+                    <br>
+                    <input type = "radio" id ="dura" name ="TipoTapa" value ="50000" onclick="valorTapaDura()">Tapa Dura
                 </div>
 
-                <div class="producto">
-                    <img src = "C:\Users\Redes-20\Desktop\Tienda discos\Carpeta de Imagenes\WW2.jpg" alt="Lo que no te contaron de la Segunda Guerra Mundial" width="300" height="300">
-                    <button onclick = "Tapa_Blanda()">Tapa Blanda</button>
-                    <button onclick = "Tapa_Dura()">Tapa Dura</button>
-                    <button onclick="Agregar_Producto(300,'Lo que no te contaron de la Segunda Guerra Mundial')">Agregar al carrito</button>
+                <div class="Libro">
+                    <img src = "C:\Users\Redes-20\Desktop\Proyecto-Informatico-2--main\Tienda discos\Carpeta de Imagenes\WW2.jpg" alt="Lo que no te contaron de la Segunda Guerra Mundial" width="300" height="300">
+                    
+                    <input type="radio" id = "blanda" name="TipoTapa" value="10000" onclick="Tapa_Blanda()">Tapa Blanda
+                    <br>
+                    <input type = "radio" id ="dura" name ="TipoTapa" value ="50000" onclick="Tapa_Dura()">Tapa Dura
+                    <button onclick="AgregarLibro()">Agregar al carrito</button>
+
+                    
+
+                    <h1></h1>
+                    
+                    
                 </div>
             </div>
 
@@ -180,10 +205,8 @@
 
         <script>
 
-            
-
             let Total = 0 ;
-
+            let tipo = "";
 
             let Lista_Productos = [] ;
             let Lista_Precios = [] ;
@@ -208,33 +231,78 @@
                 }
             }
 
-
+            function Comprar() {
+                prompt('Perfecto ! pasaremos al metodo de pago, Indique cual es a continuacion : ');
+                alert('Perfecto ! todo a sido comprado con exito.');
+            }
            
             function Mostrar_Lista_productos2() {
 
                 for(let i = 0 ; i < Lista_Productos.length; i++ ){
                     document.write('______________________________<br>');
-                    
-
-                    document.write(Lista_Productos[i] +' -     Precio : $'+ Lista_Precios[i] + '<br>');
+                    document.write(Lista_Productos[i] + ' -     Precio : $'+ Lista_Precios[i] + '<br>');
                     document.write('______________________________<br>');
-
-
                 }
-
+                
                 document.write('Total a Pagar : ' + Total + '<br>');
+                document.body.insertAdjacentHTML("beforeend", "<button onclick='Comprar()'>Comprar</button>");
 
             }
 
-            function Tapa_Blanada(){
-                alert('Blanda');
+
+            function Tapa_Blanda(){
+                let blanda = document.getElementById("blanda");
+
+                if(blanda.checked){
+                    let tipo = blanda.value;
+                    alert(tipo);
+                }
             }
 
             function Tapa_Dura(){
-                alert('Dura');
+                let dura = document.getElementById("dura");
+
+                if(dura.checked){
+                    let tipo = dura.value;
+                    alert(tipo);
+                }
             }
-            
-            
+
+            function AgregarLibro() {
+
+    let tapa = document.querySelector('input[name="TipoTapa"]:checked');
+
+    if (tapa == null) {
+        alert("Seleccione un tipo de tapa");
+        return;
+    }
+
+    let descripcion = "";
+    let precio = 300;
+
+    if (tapa.value == "10000") {
+        descripcion = " - Tapa Blanda";
+        precio += 10000;
+    } else {
+        descripcion = " - Tapa Dura";
+        precio += 50000;
+    }
+
+    Agregar_Producto(
+        precio,
+        "Lo que no te contaron de la Segunda Guerra Mundial" + descripcion
+    );
+}
+
+            function valorTapaDura(){
+                document.getElementById('precio').textContent = '$50000';
+            }
+
+            function valorTapaBlanda(){
+                document.getElementById('precio').textContent = '$10000';
+            }
+
+      
 
 
     </script>
@@ -253,3 +321,11 @@
 
 
 </html>
+
+
+let dura = document.getElementByID("Dura");
+
+if(dura.checked){
+    let tipo = dura.value;
+    alert(tipo);
+}
