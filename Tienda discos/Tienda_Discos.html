@@ -72,6 +72,7 @@
             <a href="https://www.youtube.com/watch?v=ThNmW-c6zdU&list=RDThNmW-c6zdU&start_radio=1">
                 <img src = "C:\Users\Redes-20\Desktop\Proyecto-Informatico-2--main\Tienda discos\Carpeta de Imagenes\DTM.jpg" alt="DTMOST" width="200" height="200">
             </a>
+            <input type="radio"  name="Disco Vinilo" onclick="Vinilo()"> Vinilo
             <button onclick = "Agregar_Disco(700,'Dan The Man Oficial Ost Disk')">Agregar al carrito</button>
 
 
@@ -82,6 +83,7 @@
             <a href="https://www.youtube.com/watch?v=XBOyLcEEDa0&list=RDXBOyLcEEDa0&start_radio=1">
                 <img src = "C:\Users\Redes-20\Desktop\Proyecto-Informatico-2--main\Tienda discos\Carpeta de Imagenes\duki.jpg" alt="Lata con Plata" width="200" height="200">
             </a>
+            <input type="radio"  name="Disco Vinilo" onclick="Vinilo()"> Vinilo
             <button onclick = "Agregar_Disco(500,'duki1')">Agregar al carrito</button>
 
 
@@ -91,6 +93,7 @@
             <a href="https://www.youtube.com/watch?v=J6VYKkWYn9E">
                 <img src = "C:\Users\Redes-20\Desktop\Proyecto-Informatico-2--main\Tienda discos\Carpeta de Imagenes\Salamaracara.jpg" alt="heráldica" width="200" height="200">
             </a>
+            <input type="radio"  name="Disco Vinilo" onclick="Vinilo()"> Vinilo
             <button onclick = "Agregar_Disco(1100,'Salamalacara Disk')">Agregar al carrito</button>
 
 
@@ -100,6 +103,7 @@
             <a href="https://www.youtube.com/watch?v=5uwvKuupEhw&list=RD5uwvKuupEhw&start_radio=1">
                 <img src = "C:\Users\Redes-20\Desktop\Proyecto-Informatico-2--main\Tienda discos\Carpeta de Imagenes\HK.jpg" alt="Hollow Knight Ost" width="200" height="200">
             </a>
+            <input type="radio"  name="Disco Vinilo" onclick="Vinilo()"> Vinilo
             <button onclick = "Agregar_Disco(1500,'Hollow Knight Oficial OST Disk')">Agregar al carrito</button>
 
 
@@ -110,6 +114,7 @@
             <a href="https://www.youtube.com/watch?v=Cn-HQvN0grI&list=RDCn-HQvN0grI&start_radio=1">
                 <img src = "C:\Users\Redes-20\Desktop\Proyecto-Informatico-2--main\Tienda discos\Carpeta de Imagenes\duki2.jpg" alt="5202" width="200" height="200">      
             </a>
+            <input type="radio"  name="Disco Vinilo" onclick="Vinilo()"> Vinilo
             <button onclick = "Agregar_Disco(500,'duki2')">Agregar al carrito</button>
 
 
@@ -293,7 +298,7 @@
                 let precio = PrecioBase+Number(10000);
 
 
-                Lista_Productos.push(nombre );
+                Lista_Productos.push(nombre);
                 Lista_Precios.push(precio);
 
                 Total +=precio;
@@ -307,18 +312,7 @@
 </body>
 
 
-
-
-
-
 </html>
 
-
-let dura = document.getElementByID("Dura");
-
-if(dura.checked){
-    let tipo = dura.value;
-    alert(tipo);
-}
 
 
