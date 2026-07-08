@@ -62,15 +62,19 @@
             <a href="https://www.youtube.com/watch?v=mx42ZBl6-N4">
                 <img src = "C:\Users\Redes-20\Desktop\Proyecto-Informatico-2--main\Tienda discos\Carpeta de Imagenes\StifieThoven.jpg" id = "StiffyThoven" alt="Stiffythoven" width="200" height="200">
             </a>
+            <input type="radio"  name="Disco Vinilo" onclick="Vinilo()"> Vinilo
+            <button onclick = "Agregar_Disco(500,'StiffieThoven Disk')">Agregar al carrito</button>
             
-            <button onclick = "Agregar_Producto(500,'StiffieThoven Disk')">Agregar al carrito</button>
+
         </div>
            
         <div class="producto">
             <a href="https://www.youtube.com/watch?v=ThNmW-c6zdU&list=RDThNmW-c6zdU&start_radio=1">
                 <img src = "C:\Users\Redes-20\Desktop\Proyecto-Informatico-2--main\Tienda discos\Carpeta de Imagenes\DTM.jpg" alt="DTMOST" width="200" height="200">
             </a>
-            <button onclick = "Agregar_Producto(700,'Dan The Man Oficial Ost Disk')">Agregar al carrito</button>
+            <button onclick = "Agregar_Disco(700,'Dan The Man Oficial Ost Disk')">Agregar al carrito</button>
+
+
         </div>
 
 
@@ -78,21 +82,27 @@
             <a href="https://www.youtube.com/watch?v=XBOyLcEEDa0&list=RDXBOyLcEEDa0&start_radio=1">
                 <img src = "C:\Users\Redes-20\Desktop\Proyecto-Informatico-2--main\Tienda discos\Carpeta de Imagenes\duki.jpg" alt="Lata con Plata" width="200" height="200">
             </a>
-            <button onclick = "Agregar_Producto(500,'duki1')">Agregar al carrito</button>
+            <button onclick = "Agregar_Disco(500,'duki1')">Agregar al carrito</button>
+
+
         </div>
 
         <div class="producto">
             <a href="https://www.youtube.com/watch?v=J6VYKkWYn9E">
                 <img src = "C:\Users\Redes-20\Desktop\Proyecto-Informatico-2--main\Tienda discos\Carpeta de Imagenes\Salamaracara.jpg" alt="heráldica" width="200" height="200">
             </a>
-            <button onclick = "Agregar_Producto(1100,'Salamalacara Disk')">Agregar al carrito</button>
+            <button onclick = "Agregar_Disco(1100,'Salamalacara Disk')">Agregar al carrito</button>
+
+
         </div>
 
         <div class="producto">
             <a href="https://www.youtube.com/watch?v=5uwvKuupEhw&list=RD5uwvKuupEhw&start_radio=1">
                 <img src = "C:\Users\Redes-20\Desktop\Proyecto-Informatico-2--main\Tienda discos\Carpeta de Imagenes\HK.jpg" alt="Hollow Knight Ost" width="200" height="200">
             </a>
-            <button onclick = "Agregar_Producto(1500,'Hollow Knight Oficial OST Disk')">Agregar al carrito</button>
+            <button onclick = "Agregar_Disco(1500,'Hollow Knight Oficial OST Disk')">Agregar al carrito</button>
+
+
 
         </div>
 
@@ -100,7 +110,10 @@
             <a href="https://www.youtube.com/watch?v=Cn-HQvN0grI&list=RDCn-HQvN0grI&start_radio=1">
                 <img src = "C:\Users\Redes-20\Desktop\Proyecto-Informatico-2--main\Tienda discos\Carpeta de Imagenes\duki2.jpg" alt="5202" width="200" height="200">      
             </a>
-            <button onclick = "Agregar_Producto(500,'duki2')">Agregar al carrito</button>
+            <button onclick = "Agregar_Disco(500,'duki2')">Agregar al carrito</button>
+
+
+
         </div>
     </div>
 
@@ -208,6 +221,8 @@
             let Total = 0 ;
             let tipo = "";
 
+            let Precio_Libro = 0 ;
+
             let Lista_Productos = [] ;
             let Lista_Precios = [] ;
 
@@ -238,6 +253,11 @@
 
             }
 
+            function Vinilo(){
+                let Precio_Libro = 0 ;
+
+
+            }
 
             function Mostrar_Lista_Producto() {
                 let carrito = document.getElementById("carrito");
@@ -268,6 +288,20 @@
 
             }
 
+            function Agregar_Disco(PrecioBase,nombre){
+
+                let precio = PrecioBase+Number(10000);
+
+
+                Lista_Productos.push(nombre );
+                Lista_Precios.push(precio);
+
+                Total +=precio;
+
+            }
+
+
+
     </script>
 
 </body>
@@ -286,3 +320,5 @@ if(dura.checked){
     let tipo = dura.value;
     alert(tipo);
 }
+
+
