@@ -1,1 +1,1 @@
-Trabajo de tienda de sdiscos realizado por Santiago Cañete ysamir rivera.
+Trabajo de tienda de electronicos Syryndy realizado por Santiago Cañete y samir rivera.
