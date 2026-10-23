@@ -1,3 +1,1 @@
-hecho por Santiago Cañete Ugaz 
-Santiago pedraza 
-
+Trabajo de tienda de sdiscos realizado por Santiago Cañete ysamir rivera.
