@@ -1,0 +1,99 @@
+* {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+    }
+
+
+    body{
+        background-color: black;
+        color: white;
+    }
+
+
+    .contenedor-sesion{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        margin: 0 500px;
+    }
+
+
+    .correo-electronico, .contrasena {
+        display: flex;
+        flex-direction: column;
+    }
+
+
+
+    .lado-izquierdo{
+        background-image: url('Envios.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+
+
+        border-radius: 10px;
+    }
+
+
+    .texto {
+        color: white;
+        padding: 30px 25px;
+    }
+
+
+
+    .lado-derecho {
+        background-color: #1e1e24;
+        border-radius: 10px;
+    }
+
+
+    .contenido {
+        padding: 30px 25px;
+    }
+
+
+    .contenido p{
+        margin: 10px 0 20px;
+    }
+
+
+    .contenido button{
+        width: 100%;
+        border: none;
+        padding: 10px 0;
+        border-radius: 5px;
+        color: white;
+        background-color: rgb(49, 49, 49);
+        margin: 25px 0;
+    }
+
+
+    label {
+        margin-bottom: 5px;
+    }
+    input {
+        padding: 5px;
+    }
+
+
+    .contrasena label {
+        margin-top: 20px;
+
+
+    }
+
+    .crear-cuenta{
+        text-align: center;
+    }
+
+    .texto h2 {
+        color: #3b82f6;
+    }
+
+    h2 {
+        color: #60a5fa;
+    }

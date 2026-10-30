@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syryndy.com</title>
+    <link rel="stylesheet" href="styleSANTI.css">
+    <script src="inventario.js" defer></script>
+
+    <script src="carrito.js" defer></script>
+</head>
+
+<body>
+    <script>
+
+
+
+    </script>
+
+
+
+
+     <header class = "encabezado"> 
+        
+        <img  onclick = IrPaginaPrincipal() src = "Logo.png" alt="" width="200" height="130">
+
+        <h2 style = "color:rgb(0, 81, 255);" >Perfil de Usuario</h2>
+        <p style = "color:white;"><strong>Correo registrado:</strong> <span id="mostrar-correo">Cargando...</span></p>
+
+
+        <button class="BotonIngresar" id="abrirVentana"
+                type="button" onclick="abrirPopUpCuenta()">
+
+            <img src="Ingresar.png" alt="" width="160px" height="80px">
+
+        </button>
+
+    </header>
+
+    <dialog id="popUpCuenta" class="popup-cuenta">
+
+        <h1>¡Bienvenido a Syryndy!</h1>
+
+        <p>
+            Iniciá sesión para comprar nuestros productos
+            o registrate para crear una cuenta.
+        </p>
+
+        <hr>
+
+        <div >
+
+            <button type="button" onclick="IrRegistro()">
+                Registrarme
+            </button>
+
+            <button type="button" onclick="IrInicioSesion()">
+                Iniciar sesión
+            </button>
+
+        </div>
+
+        <button  type="button"
+                onclick="cerrarPopUpCuenta()">
+            Cerrar
+        </button>
+
+    </dialog>
+
+    
+
+    <div class = "Barritidirijilla"></div>
+
+    <div class = "Atajos_Barra">
+
+        <button class = "Atajo" onclick = IrPaginaPrincipal()>
+            <img src = "Casa.png" alt="" width="200" height="50">
+        </button>
+
+        <button class = "Atajo" onclick = IrGrande()>
+            <img src = "Grandes.png" alt="" width="200" height="50">
+        </button>
+
+        <button class = "Atajo" onclick = IrChicos()>
+            <img src = "Chicos.png" alt="" width="200" height="50">
+        </button>
+
+        <button class = "Atajo" onclick="IrAboutUs()">
+            <img src = "AboutUs.png" alt="" width="200" height="50">
+        </button>
+
+        <button class = "Atajo" onclick = IrReseñas()>
+            <img src = "Reseñas.png" alt="" width="200" height="50">
+        </button>
+
+        <button class = "Atajo" onclick = IrCarrito()>
+            <img src = "carrito.png" alt="" width="200" height="50">
+        </button>
+
+
+    </div>
+
+
+    <div class = "Barrita">
+        <h2 style = "color:rgb(255, 255, 255); ">Los Mejores Dispositivos electronicos del Mercado con punto de Encuentro o dejandolo en tu casa !!!</h2>
+    </div>
+
+
+
+
+
+    <div class = "Contenedor_producto">
+
+        <img class = "Imagen_Producto_Admirar" src = "waflera.png" alt="" width="400" height="605">
+
+        <div class = "Texto_Producto">
+            <H1 class = "Titulo_Producto">Wafflera Syryndy</H1>
+
+            <h2>
+                Nuestra innovadora Wafflera 3D Syryndy es ideal para preparar
+                deliciosos waffles desde la comodidad de tu hogar.
+                Su diseño especial permite elaborar waffles con formas
+                originales y divertidas, perfectos para compartir en familia
+                o disfrutar de un desayuno diferente.
+            </h2>
+
+            <h1 class = "Precio">95.000$</h1>
+
+            <P>
+            <h2 style = "font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
+                * Consejo: Para conseguir waffles perfectos, distribuí
+                la mezcla uniformemente sobre la superficie y esperá a que
+                estén bien cocidos antes de retirarlos *
+            </h2>
+            <P>
+
+            <button class = "Comprar_Producto" type="button" onclick="agregarAlCarrito('wafflera')">
+                <img class= "Imagen_Comprar" src = "Comprar.png" alt="" width="195" height="50">
+            </button>
+
+            <p data-stock="wafflera">Stock disponible: cargando... </p>
+        </div>
+
+    </div>
+
+
+
+
+    <dialog id="miModal">
+        <h3>Confirmación</h3>
+        <p>¿Estás seguro de realizar esta acción?</p>
+        <div class="botones">
+            <button id="btnAceptar">Aceptar</button>
+            <button id="btnCancelar">Cancelar</button>
+        </div>
+    </dialog>
+
+
+    <div style = "margin-top: 2%; background-color: rgb(0, 5, 68); display: flex; width: 30%; margin-left:35%;  " class= "marquesina-texto">
+        <div class="tenor-gif-embed" data-postid="3339576034676009932" data-share-method="host" data-aspect-ratio="1" data-width="80px"><a href="https://tenor.com/view/pochacco-dancing-pochacco-gif-3339576034676009932">Pochacco Dancing Pochacco Sticker</a>from <a href="https://tenor.com/search/pochacco-stickers">Pochacco Stickers</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+
+        <h1 style="color: white ; font-size: medium;">
+            Productos de calidad con funciones nuevas y servicio tecnico Efectivo!!!
+        </h1>
+
+        <div class="tenor-gif-embed" data-postid="3339576034676009932" data-share-method="host" data-aspect-ratio="1" data-width="80px"><a href="https://tenor.com/view/pochacco-dancing-pochacco-gif-3339576034676009932">Pochacco Dancing Pochacco Sticker</a>from <a href="https://tenor.com/search/pochacco-stickers">Pochacco Stickers</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+    </div>
+
+    <footer>
+        <div class="footer-contenedor">
+            <div class="footer-lado-izquierdo">
+                <h2>Syryndy</h2>
+                <p>Sea bienvenido a Syryndy.com, la página web en donde encontrara cualquier electrodomestico.</p>
+                <a href="">Sobre Nosotros</a>
+            </div>
+
+            <div class="footer-lado-derecho">
+                <h2>¡Contactate con Nosotros!</h2>
+                <p>Nuestras oficinas se encuentran en Alvarez Thomas 800</p>
+                <a href="">Syryndy.Management@gmail.com</a>
+            </div>
+        </div>
+        <hr>
+        <div class="footer-parte-bajo">
+            <p>© 2026 Syryndy.com - Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+
+
+
+
+</body>
+
+</html>
