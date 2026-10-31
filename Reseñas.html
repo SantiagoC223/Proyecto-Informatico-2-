@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reseñas</title>
+    <link rel="stylesheet" href="styleSANTI.css">
+    <script src="inventario.js" defer></script>
+    <script src="inicio-sesion.js" defer></script>
+
+</head>
+<style>
+    
+    /* 35, 37, 38 (Footer)
+    236, 235, 232 (Padding)
+    247, 247, 247 (Review Padding)
+    255, 255, 255 (Background) */
+    
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: sans-serif;
+        background-color: black;
+    }
+
+    button {
+        color: #ffffff;
+        font-weight: 700;
+        font-size: 15px;
+        background-color: rgb(35, 37, 38);
+        border: none;
+        border-radius: 10px;
+        padding: 10px;
+    }
+
+
+    .contenido-tarjetas{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+    }
+
+    .lado-izquierdo h2 {
+        margin: 15px 0;
+    }
+
+    .perfil-contenido{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .perfil-imagen img{
+        border-radius: 50%;
+    }
+
+    .nombre-fecha {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .nombre-fecha .nombre {
+        font-weight: 700;
+        font-size: 15px;
+    }
+
+    .nombre-fecha .fecha {
+        font-size: small;
+    }
+
+    .estrellas {
+        display: inline-block;
+        padding: 10px 0 20px;
+    }
+
+    .tarjeta-reseña{
+        border: solid 1px lightgray;
+        border-radius: 10px;
+        padding: 20px;
+        background-color: #ffffff;
+    }
+
+    .reseñas-formulario-contenedor{
+        display: flex;
+        margin-top: 30px;
+    }
+
+
+    .seccion-reseñas {
+        padding: 30px 70px;
+        background-color: black;
+    }
+
+    /* Formulario */
+
+    .lado-derecho{
+        border: solid 1px lightgray;
+        border-radius: 10px;
+        padding: 20px;
+        margin-left: 20px;
+        width: 1000px;
+        background-color: #ffffff;
+    }
+
+    p {
+        font-size: 15px;
+    }
+
+    .lado-derecho p{
+        margin: 10px 0 15px;
+        font-size: 15px;
+    }
+
+    .lado-derecho span{
+        display: inline-block;
+        margin-bottom: 20px;
+    }
+
+    .boton-reseña {
+        width: 100%;
+    }
+
+    textarea {
+        margin: 10px 0;
+        padding: 5px 10px;
+        width: 100%;
+    }
+
+    input {
+        width: 100%;
+        padding: 5px 10px;
+    }
+
+    /*Seccion Banner*/
+
+    .lado-superior{
+        background-image: url('https://q-xx.bstatic.com/xdata/images/hotel/max500/533182200.jpg?k=c362fa15eaf7bb7dad294b90cac6ca984733b53a011fdc7a54aee9cd873f2f6f&o=');
+        background-size: cover;          /* Ajusta la imagen para cubrir todo el contenedor */
+        background-position: center;     /* Centra la imagen */
+        background-repeat: no-repeat;    /* Evita que la imagen se repita */
+        border-radius: 10px;             /* Redondea las esquinas */
+    }
+    
+    .banner-contenido {
+        padding: 30px 50px;
+    }
+
+    .banner-contenido span{
+        font-weight: 600;
+    }
+
+    .banner-contenido h2{
+        margin: 10px 0;
+    }
+
+    .banner-contenido p{
+        margin: 10px 0 20px;
+    }
+
+    .banner-contenido button {
+        padding: 10px 30px;
+    }
+
+
+    /*Seccion Productos Destacados*/
+
+
+    .seccion-productos-destacados{
+background-color: rgb(241, 241, 241);
+}
+
+.contenido-productos{
+display: grid;
+grid-template-columns: repeat(5, 1fr);
+gap: 15px;
+}
+
+.tarjeta-producto .precio {
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.tarejta-producto .valoracion{
+    display: inline-block;
+}
+.tarjeta-producto p{
+margin-bottom: 15px;
+}
+
+.tarejta-producto button{
+    width: 100%;
+}
+
+.tarjeta-producto{
+border: solid 1px lightgray;
+border-radius: 10px;
+background-color: #ffffff;
+padding: 15px;	
+}
+
+.contenedor-seccion {
+padding: 30px 70px;
+}
+
+</style>
+<body>
+
+    <header class = "encabezado"> 
+        
+        <img  onclick = IrPaginaPrincipal() src = "Logo.png" alt="" width="200" height="130">
+
+        <h2 style = "color:rgb(0, 81, 255);" >Perfil de Usuario</h2>
+        <p style = "color:white;"><strong>Correo registrado:</strong> <span id="mostrar-correo">Cargando...</span></p>
+
+
+        <button class="BotonIngresar" id="abrirVentana"
+                type="button" onclick="abrirPopUpCuenta()">
+
+            <img src="Ingresar.png" alt="" width="160px" height="80px">
+
+        </button>
+
+    </header>
+
+    <dialog id="popUpCuenta" class="popup-cuenta">
+
+        <h1>¡Bienvenido a Syryndy!</h1>
+
+        <p>
+            Iniciá sesión para comprar nuestros productos
+            o registrate para crear una cuenta.
+        </p>
+
+        <hr>
+
+        <div >
+
+            <button type="button" onclick="IrRegistro()">
+                Registrarme
+            </button>
+
+            <button type="button" onclick="IrInicioSesion()">
+                Iniciar sesión
+            </button>
+
+        </div>
+
+        <button  type="button"
+                onclick="cerrarPopUpCuenta()">
+            Cerrar
+        </button>
+
+    </dialog>
+
+    
+
+    <div class = "Barritidirijilla"></div>
+
+    <div class = "Atajos_Barra">
+
+        <button class = "Atajo" onclick = IrPaginaPrincipal()>
+            <img src = "Casa.png" alt="" width="200" height="50">
+        </button>
+
+        <button class = "Atajo" onclick = IrGrande()>
+            <img src = "Grandes.png" alt="" width="200" height="50">
+        </button>
+
+        <button class = "Atajo" onclick = IrChicos()>
+            <img src = "Chicos.png" alt="" width="200" height="50">
+        </button>
+
+        <button class = "Atajo" onclick="IrAboutUs()">
+            <img src = "AboutUs.png" alt="" width="200" height="50">
+        </button>
+
+        <button class = "Atajo" onclick = IrReseñas()>
+            <img src = "Reseñas.png" alt="" width="200" height="50">
+        </button>
+
+        <button class = "Atajo" onclick = IrCarrito()>
+            <img src = "carrito.png" alt="" width="200" height="50">
+        </button>
+
+
+    </div>
+
+
+    <div class = "Barrita">
+        <h2 style = "color:rgb(255, 255, 255); ">Los Mejores Dispositivos electronicos del Mercado con punto de Encuentro o dejandolo en tu casa !!!</h2>
+    </div>
+
+
+
+     <section class="seccion-reseñas">
+        <div class="reseñas-formulario-contenedor">
+
+            <div class="lado-izquierdo">
+            <h2>Lo que dicen nuestros clientes</h2>
+            <div class="contenido-tarjetas">
+
+                <div class="tarjeta-reseña">
+                    <div class="perfil-contenido">
+                        <div class="perfil-imagen">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNBxIgXBHbAjfY-ZEd2b2MRo5-gAXXP2tsbzg-HWpyag&s=10" alt="" height="45" width="45">
+                        </div>
+                        <div class="nombre-fecha">
+                            <span class="nombre">Samir Rivera</span>
+                            <span class="fecha">Hace 1 mes</span>
+                        </div>
+                    </div>
+                    <span class="estrellas">⭐ ⭐ ⭐ ⭐ ⭐</span>                
+                    <p>"Me gusto el servicio y la entrega de mi heladera. Seguire comprando en esta tienda"</p>
+                </div>
+
+
+
+
+                <div class="tarjeta-reseña">
+                    <div class="perfil-contenido">
+                        <div class="perfil-imagen">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTF7Xx6b7LfSSg0PJYe245mkT089A1NPfkgUbDIa-_Zig&s=10" alt="" height="45" width="45">
+                        </div>
+                        <div class="nombre-fecha">
+                            <span class="nombre">Aquiles Guzman</span>
+                            <span class="fecha">Hace 2 semanas</span>
+                        </div>
+                    </div>
+                    <span class="estrellas">⭐ ⭐ ⭐ ⭐</span>                
+                    <p>"Puedo guardar en una heladera grande varias bevidas energeticcas."</p>
+                </div>
+
+
+                <div class="tarjeta-reseña">
+                    <div class="perfil-contenido">
+                        <div class="perfil-imagen">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR77Xd9vegp9NfamW0Rw-7KSjj7Lv5dKsSbiam-12rr-w&s=10" alt="" height="45" width="45">
+                        </div>
+                        <div class="nombre-fecha">
+                            <span class="nombre">Gonzalo Delgado</span>
+                            <span class="fecha">Hace 3 meses</span>
+                        </div>
+                    </div>
+                    <span class="estrellas">⭐</span>                
+                    <p>"Nuestra pagina es mejor..."</p>
+                </div> 
+
+                <div class="tarjeta-reseña">
+                    <div class="perfil-contenido">
+                        <div class="perfil-imagen">
+                            <img src="data:image/webp;base64,UklGRnoTAABXRUJQVlA4IG4TAAAQZACdASrSANIAPp1CnUslo6KqJ5LMiUATiUAZihmdX/I1I/yT4gBP+f8sb4buneszcB/0P/n+qn9mf25973zqPS36pjekY053ZvltrrwZwUUWfppQR+jeexO5+02L08V3+/2/fiARX24O3PFxRZ8GJvihNc5HTEyV3JP/tfmZC53Z8IVyMcQn+jCOx7+V0BrV69F5z8mKhFdmt6hJ53F4jtYE/lJGmuPLwOmCunRHnvgh/P4auhqbPL1GltWTV5hg0YmjQ5qgftb+oepnspVvOenobTPkMWq4vRlW6t6gSpqp9LLS1eA1Fr8LSdYZm80SEIv2DUx+29go7rrFrOOIupmIqBpz//HCmrPmLXapIMOoF4mX664NptlfQYRfV5MQzvGvpX3ryRcOyAeetTDXERMaae9YCkyYJqrl214EMlZwtuLFTYdufLalCOAMP8/R0uUL5t6HW/lG9ny+3WPkKrvaYIAFSkSYpZfgahfuws8pvyAQf3N29SOmGXNrkcETC+ld8ftRnfDDQ6oqtP8mFWVC3+ZXOKAcUy5v+e6R6OjiCZ2B7cg13GV3CKe0bEYZMgaGo1uRKNRI64qdWGwlaPuMJZwCsiYf8ZzJ5nW6qqmW/K092/7HgO/4If6RC/9i5bOo4UaCK2VMCq5j6y3m3j4a95cPFIhIFrSx/vXS5IPuyILtPV79/rqIKJdhZF1Yr28n/zTgKQtvcbyGkRZHJ35afaM5dkJUoHH/oqJHDB58dwrguBVRpBbmGSYyzDc0UVFN13iQN8FFCNls3VfpyRuSZjOfKqmyI0hZ/8K5KPOLY/mENO78IhpDu1iktedD9pE1m9rQ/V8N5EBzPUBXhVSVa6r5/6CB6MW5BXE1d1hMnVIRGbd5Vqno4h389TO749YeAv8LxCQ3E0zasKpCWpcgRSwaaJTvS2+aNjdncz03JfPEKF2u1PHxxN+FuEOGYQUuT2QJdxPgfZFL0E2OguBGjE9Oq4Rs0i1/u0Fb/sBug3+0SuTAk+Xrc0knpy0g5Dm7/cqPVpJhVB+jo7ho/sPSRpKp1H1+67IhI3aOOB6mBRbouNNFwAD+0bbAuoWKZikssioniw7EIKu1JGnRyCMOyjrN8aICCIAXuJe2ptl/WmVRAsZx1dN+BCaxhoK+QA8pTP7+d/t2BSwJX6ycSOM17CjsD9NvgGN1CIJUEWLeSs2Z8DLOcvAhz+wm299Jk8+8IvsKWuNlgbxO8sG7x0PlxpnaDED96yGEnIfldGnIQocBl1y82etdT6DmyOLStICy6vTnSVL+pXwzqKiifvgji1oHgYBQzMIOA6KiJjOGCSCMu/rmFeiX64MPCpsLKkWjHkQOl7E7tn0SHatzb8KHR9dJH91s86RIjD1jDDehTie9TLIkqK34c+QQ5MyEKSFxMWq3RW8RKChbPwrXt9cAi61rzMfMURPaKw0mXR6B8KagfYJtnmWzbFJ3HdhfFT9NmDcWI90Ed/4+5uXAimPkOxrR6q7n8qiDbAhuBsPgz1bfWatUYDSpRFfn9FYipC/D0Jg3195orw8H3C+pam1ftqRFFPnmjXR9PsNc260AVYFC+u6kAg9kyNujC+vs4tfi8UP0xIXUpVvK4tvJwv1hIsO/Cj4ybgtMNdxuaiAHyyeZcs3yMOo57C2Pkl/FMklmCZu7LjboN6Wq0+2zCb3SYl9pK6XkyaAF30t8lMYidebblm54d4Qy7NcjeKuN5O3dXPcbmR97q3YoE7cV/1CDX7FTkbqirTZ/Ij+hOqUansicNyUrdkATQP0OIF3p9/IywGhWqN3wUvwKUqtZ6Cb+w4H2fk0sLyNmwRbvs1lqLe2GwnoEskjy7bQVPuYmh8n7XqIg2C0+vIht6/jYY4uB7ub2WPd1XlDG3Nr7usRt9BhSGksU8Odhm4dTS15aUTp6thlSppqJuZBmR+XlVQDd81Z0iuZDPyDMatQkO/BYuurIKJoQ/3x7rVjQJN4Bo0WgMf0AELHekOQ2odSJbG387ly9ajsnCv4ooaEjRPvg9mLHHhdUXhzRyLYH+wex/7ZSQq05yrrhVpwsidUDxAN+UuO8moaJeSpp3AzEcpRrHR749czDVVI+UBL+SOP3u9zqJQvi1DJjxhUBb7IIBZaQT0g2fxeKlDHNStw+OpuF/1+eCljjq5DOGict2LO5dVUnOrjWtdh+39aJ94YS7f0XS5BiszjuzCY4GxXMTgCGwUt6CXeOBziMleXxTxbA8J1dUZYEMqcxbxQdlkfNZ6AlXVEzzxaAVaS9osnNQJ8W6MtyEeMALKtvFfytfTvxZ+pNUUi50HqjXLFc28zPs3qAptm8nwWswLrGpofg42z1rm95m3ITFkIa392nX2sZh4UOpecsYgrNXfvvFqS5vZVuDyiiiDEAjN+2IOHMaC/0kJUszt55EYrih0l9BX0HBXuyz1LrC207a1R2t1BUGBxmNKEZqePnlvfFWhquQTBPMfQ/p9lcaRLWWW0NHDDrKmqqH7QaccaGCgKaqStNrw1D4HuuAg7PlfPRGTbV+hYJwCOPDfsHM0kRPk0Ph7sBKPNrHFKHgjSyqBL+8eftocmB6Vmd29S8fwQFvbgr31/4z+N1vkazmrnMp8l+t3wW+EfKQb/HapLQJV0fBzu+y38D30t8aWOY6LcljpCAVtmJoHpKaUDchm0md4FEwKrZ8tdXlQLNAiGvmGU03fwx4zL63v5N2VRWy7uipgCiOdAZnu58avyTzHyPOv1AChxHqlC8la2pjfZXc2fsuUvMfA+XpG/5VyJSPgzyp7Z6CzjT/xx3yMZzNe8NJRswim3nMM7OOEnunJ8mXJXewcFU7fzCWMF+KLG4D0/10w3E5eMdX87++k+agawWAohDCk7JSerV3n8Gc35FYn3OWyznwn+fife8O8vgQxoRrD2an2vU0W9D8yRTJo7K8M0fboVDD5NanXIYnryo452h1zqShNOzMaEPEUT/zcU7qofjG1y9oIDIux+LDyQ0Zm12vPI35E3PS5hAY3qnlB0H2ar/kPbmpdsd25ytQtD09c9tOUJ3GoCAEZCiHKDTVnVo/bdeHQqdkC7MQP/0s6jrVd/GAX98rFONItcrCbiVV2JK2h+auivLr8P4dKoMpEBUBZPlp8lv39ahui/pqW7a1AOxTACd5K38mL/yNtNPRhCYvaWeWOXGyvxxADHJVgvctSUlSg3KgdgcglAGOH72qNswqmIYn+kjFR8iJ4OcZBnIWCKqKW8lXo6kf+crS/bkwJsG+5ZMkqdj3rHUCPJhhB21RiPI+wnjUxXLp+FotX6aWHrvNOJw+tQRglQzVQH7tFLtZCzbt5zQTX9HZzUatn9quQFMZCDRnmYT67/9mBTRRqLgc5BDBJnz/d+KMTwFLIzzKucWez7L9dBy/3pXZzSMr/6aYLPTbODGnKpkoWoM+UyAv4NabU6qyl470o0XpJ/um5OR0g8gdfbFgf47ZwPavh0prWGHFyniW9QVTEsg2o1sJU6RZ6wPBWtT6pxUztT7UmvXCwFGNw7M6mCJSvuh2OxMJXK8wJ+pqAhb/J1bsRfDRow5zBBZcFQ8QH6pOD5aKy2uATqvO4gRAaLVNDc7OjKtcDzuzHTsdmW5BopBTNMiyKbbVZX1mB1BI8iQAWw4cHIc7eGyqpl806WCylTtLySypXW3ilD7Y1s2cQoe2p3UTfSWG/U2IJSvAhNlieFZy6BOoJv/L0ryBF58+Feu35PG6FbhMSX3yyFcgOutyy153xmLx1acaY6Uoyl22nhLW1moCx6mAySmsu9tc5C0mRbUem0Or1GaPNjyWoDhkKOMzp/4UDYa2PE33shZLtclJdMJ5jxMHFJWrOQTtRo/Snpq8zmWXm+W5vKg23VfEKp6kb91547iBGMVsnqvBOYgQe9vUmwA/qcRy/YH7vmVs36yoPj16eNNhkTMniV8+8ouNUf4bYe21hrTaxb49etsmhVD24QbCekOQhvmYilKvmeEE51I7OHmTVTCydHeZMplWVT52O7j7GWDZATPwAAn4gTREHj7fLla7Cw2k3B7AhCseHdmlxqJzAoAXk/zLOvnQBGf2PzfHaaD2AreNW6DqfsCHsibb2YlXm2/6gwvv/q7A0AfZ3oEVL4xwgG/lqhh9Wx4GH+3JcOwWJ4/tmQyATblWh8a8NLC9lxLbVbJPjFFYpb5ipSjGlPJGXhyhgXi1a63TZ86dDtk3E2tOrHo4hkZTE4ZfBYcOBXac1t+p6FCIKnzvbbTrFSMr00/dPULPH9uASJZxN9cnmXGxDKUflj7S5ln3ARvIWIH+fYOfFwZU726oUwtEqAOyGQj1Mn891STmZXVpPKzW/SuW5th3GMZ0V2N3P8wFUs7wTwYUHiSRZup7Vzpn6bGK+o8mH1qak5fz4X4x5wXS6KW7k9U394wdhkX9oP3UkejKKVrQnz3vAY5uWd4cxd3v5BRbv6Pghrm1r77JHD8i5FZEwsXtK5Xjf+TUszQNaOeCIFAUazz/0bAc8dWE158w6zu81tfOk3FmZgz1zcNDf3tHnJjy64MySqB2ONY3Xvv6bRuhmVNo2ggLoGTq3m48ipyjqS8276xd2Mep+PEWC2drSAoKnoSe2h0+G2IQxj7VJlkvRUcYzn/46qsv5wcN4z2uz/1EbOvyd4w2aD4ia9QeETA623y4j4v9qYJv070cpiVbDzmufpP96IQR59nGsRY+V8+4bNNRYBvXmSaKgxc6NKbbrX2aON8KWbZ36ju+JYRN5R2QPVDOr0cC//J4uRneOsG+YJ+tZ9ffNmFFLUExW5eZ61rC1dSBBg9O/LRkG5K+NUYyZFRiALvEe0ZGvA2SrQDoo2PbW4j0X7wP16DrOhEMGxCiTlV9yKPA4sWzuAEsc4k00oXsiX/RgJOjGo8hVhUj9v0mL1Gzraqumm3dMnLa6RV2tgNZwKhFcw8YsFaTGGDMr6CyTp6T5LwDt7ruqVKnPudB7xAmjWyqTS3ySl6teOlPgQZGPdaGCsuGJUIhF/O5f2J7hAay/fEukq0bR+R03tGvXJjzHdpZaqn8rRe/Iz/2IFVyvqT2cIeIOzUvmcOcPZeHktTrH5jT/dmzQBxDDEVB+0lR/USYANoLlGEOym/oQDXjAtmEYkWq3VG28a6asNk/ywA6B+JHF7JgAAAAAAADxGoAUfyDdtIWm7dG5W0X9oeboK45G2g+PRZMUu8ezNutJk2QgJ28wrBe7fyJbGR09PSGgxZ8SDAUw4fA7eeYGIT+nwQ8wghvlPK1JYYX9TZRo//swfXkK/kIYZizdKteXQUbblfN6anAtCFu01XeyScdQ6HRJvAfgslTUl4ZjiOw+XSlwYxuHMAGOQwcuIGFnmqNLLFtBOFq3aZnXFJjpo7EsqObPgvtUcGHulcChAKxLU58MfQvNNMvgZRsserg0lQK5Ml826Q5NiKxrk1eL+111yPr+jKWJ3Idf5y3LU5gZFpiL9+wG4DIwucGbcFw1DCiCsNlgh2UVfgq4K/5saowzF3Ztt3eI6ua9rr1ZYH1MJmj2LKIc58RtfG9/LnVJhn//w9M1FusSqlBNCiUaet12fw5htMXNVOdH+0FoiYzQG2kS6ZLnv6vNtrrMX454dwkqL+G0WNTR3YCLyROQ6SziWICbFj3U0LAnvMDNr/DFewbcib1iRUdnMf0RwHGle9JhjmC9q3B4h6HJHUNkTFBt89VTWf+Eg1F9b4w/Jr03fx33GmzcVzKYZEKrzFHkv9OuZ/ro3Mh2ANoepJfOBLSg01i78nAAIni80amOW8wf/5Oz4JyXE4Iyt7jDqRQKZiko3uTy0fxaCJ/ygYmxJ5HAmssKS5xqJ/uJ5o+OxeKnZadvPaHbtlwjt+YOXmSqx4fxtHof2g279hBLVoY3zbVDblCQnKazyY8NzqZ4utnmhfP3l0gXmvuoXh+wwolnL0e+YsfqVmQfrQKwjnbXeY1dcwtdHHO04Bnwu70lC9gKvWCdF+xOSk9KBuLqTxHpvLaNwvjeI1/Lmkk/1K8FbmZ2IiBD+fWMIbS0eaxcUW8dy9MyT98g7pLG6Bv24pge6J/0kFca7h1hUknrJtxUvYIvuAnb4SjgJGtYd7i3VmvyrSM7o16a/2Q9RIjD73+1id9VE6qlTEd6nRUMaI59/K1frr1wc91wQ1bRZMXBmbpvablPt94gcQ2DbP8rOBi06KqFBm7B9XK9ijZ3x6Vwkl2T1ymUO2l8FOJEd5qdP9ZGAUhI+u1yqaGItikkmijW5YdVA5GlimWfCt66n+z0MtehMmLN7J9SWPD7aHoFaikjQBhEgdg40gb5BYf/Ph9TdOx95N5E/896FkEz8GMzXt2jstQ6iTR0sUV4C/nfrUYnO282K+SLd4f2eUe4FonNVoOPqTh3s366pPQGve5Tpa6F/O4ajC0VzCO6mJBUzOg/p+Ls35i8A+Jet9d6X52oinZp+kQXH9fNCR+EgfsVqBn6bhNlvmivC3/nknWopPdyAMVniNJ+AC4MYorG0Ipn9L+4bZd3XWfvuI1knrdGFC86R68GLQAXFYAr5xyEguSUizSmQfhLX2W8BE3HXn/V3Nk+e3C7qCvpfwKvJwDPPCKYDQdAjQOGPr8Z7UGGM5VNhKD8LaQAA=" alt="" height="45" width="45">
+                        </div>
+                        <div class="nombre-fecha">
+                            <span class="nombre">Santiago Pedraza</span>
+                            <span class="fecha">Hace 5 meses</span>
+                        </div>
+                    </div>
+                    <span class="estrellas">⭐ ⭐ ⭐ ⭐</span>                
+                    <p>"Esta buena la mezclasora porque puedo mezclar cafe mientras escucho stiffie"</p>
+                </div> 
+
+                <div class="tarjeta-reseña">
+                    <div class="perfil-contenido">
+                        <div class="perfil-imagen">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlpXZ7FpKaz0EBEIlOf31wFyIEOqBMI6gavmVXemUFsA&s=10" alt="" height="45" width="45">
+                        </div>
+                        <div class="nombre-fecha">
+                            <span class="nombre">Catalina Atenucci</span>
+                            <span class="fecha">Hace 2 dias</span>
+                        </div>
+                    </div>
+                    <span class="estrellas">⭐ ⭐ ⭐ ⭐ ⭐</span>                
+                    <p>"La heladera chica es super comode y efectiva, es super util."</p>
+                
+                </div> 
+
+                            <div class="tarjeta-reseña">
+                    <div class="perfil-contenido">
+                        <div class="perfil-imagen">
+                            <img src="https://media.tenor.com/R_CBf3be0PsAAAAe/dumb-stupid.png" alt="" height="45" width="45">
+                        </div>
+                        <div class="nombre-fecha">
+                            <span class="nombre">Patricio Estrella</span>
+                            <span class="fecha">Hace 2 semanas</span>
+                        </div>
+                    </div>
+                    <span class="estrellas">⭐ ⭐ ⭐ ⭐ ⭐</span>                
+                    <p>"El microondas es una buena opcion ya que calienta mas que la jermu del Brian"</p>
+                </div> 
+
+                                <div class="tarjeta-reseña">
+                    <div class="perfil-contenido">
+                        <div class="perfil-imagen">
+                            <img src="https://www.magnetdistrict.in/cdn/shop/files/74c18519-52af-4414-88bd-7e981219112f.png?v=1776966817" alt="" height="45" width="45">
+                        </div>
+                        <div class="nombre-fecha">
+                            <span class="nombre">Once Once</span>
+                            <span class="fecha">Hace 5 dias</span>
+                        </div>
+                    </div>
+                    <span class="estrellas">⭐ ⭐ ⭐ ⭐ ⭐</span>                
+                    <p>"Me gusto mucho la heladera chica, perfecta para guardar los alimentos de mis patos."</p>
+                </div> 
+
+                                <div class="tarjeta-reseña">
+                    <div class="perfil-contenido">
+                        <div class="perfil-imagen">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbVw5W5eLgBgWdRkd4BkUx2awSvQ7kZONshELlegF19A&s=10" alt="" height="45" width="45">
+                        </div>
+                        <div class="nombre-fecha">
+                            <span class="nombre">Chico Fan</span>
+                            <span class="fecha">Hace 2 Meses</span>
+                        </div>
+                    </div>
+                    <span class="estrellas">⭐ ⭐ ⭐</span>                
+                    <p>"Ojala le entrega sea un poco mas rapida ya que vivo en Monte Grande y estoy con mis fans."</p>
+                </div> 
+
+
+                
+               <div class="tarjeta-reseña">
+                    <div class="perfil-contenido">
+                        <div class="perfil-imagen">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQu1oIZ_HRzxwk4pDJhIxaM7kJK-mkRAKWq3LQGXyVObkm6B6HdEnY0KN0&s=10" alt="" height="45" width="45">
+                        </div>
+                        <div class="nombre-fecha">
+                            <span class="nombre">Michael Jackson</span>
+                            <span class="fecha">Hace 17 años</span>
+                        </div>
+                    </div>
+                    <span class="estrellas">⭐ ⭐ ⭐ ⭐ ⭐ ⭐</span>                
+                    <p>"Hello im Michael Jackson HEE HEE. Ami gustarme la batidora para mi cafe, si ven a algun niño avisneme y me lo llevo a mi rancho de neverland"</p>
+                </div> 
+
+
+            </div>               
+        </div>
+
+
+        </div>
+
+        <div style = "margin-top: 2%; background-color: rgb(0, 5, 68); display: flex; width: 30%; margin-left:35%;  " class= "marquesina-texto">
+        <div class="tenor-gif-embed" data-postid="3339576034676009932" data-share-method="host" data-aspect-ratio="1" data-width="80px"><a href="https://tenor.com/view/pochacco-dancing-pochacco-gif-3339576034676009932">Pochacco Dancing Pochacco Sticker</a>from <a href="https://tenor.com/search/pochacco-stickers">Pochacco Stickers</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+        <h1 style="color: white ; font-size: medium;">Productos de calidad con funciones nuevas y servicio tecnico Efectivo!!!</h1>
+        <div class="tenor-gif-embed" data-postid="3339576034676009932" data-share-method="host" data-aspect-ratio="1" data-width="80px"><a href="https://tenor.com/view/pochacco-dancing-pochacco-gif-3339576034676009932">Pochacco Dancing Pochacco Sticker</a>from <a href="https://tenor.com/search/pochacco-stickers">Pochacco Stickers</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+    </div>
+
+        
+    </section>
+
+    <footer>
+        <div class="footer-contenedor">
+            <div class="footer-lado-izquierdo">
+                <h2>Syryndy</h2>
+                <p>Sea bienvenido a Syryndy.com, la página web en donde encontrara cualquier electrodomestico.</p>
+                <a href="" onclick="IrAboutUs()">Sobre Nosotros</a>
+            </div>
+
+            <div class="footer-lado-derecho">
+                <h2>¡Contactate con Nosotros!</h2>
+                <p>Nuestras oficinas se encuentran en Alvarez Thomas 800</p>
+                <a href="">Syryndy.Management@gmail.com</a>
+            </div>
+        </div>
+        <hr>
+        <div class="footer-parte-bajo">
+            <p>© 2026 Syryndy.com - Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+
+
+
+   
+</body>
+</html>

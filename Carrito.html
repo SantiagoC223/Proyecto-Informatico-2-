@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Carrito - Syryndy</title>
+
+    <link rel="stylesheet" href="styleSANTI.css">
+
+    <script src="inventario.js" defer></script>
+    <script src="carrito.js" defer></script>
+
+</head>
+
+<body>
+
+    <header class = "encabezado"> 
+        
+        <img  onclick = IrPaginaPrincipal() src = "Logo.png" alt="" width="200" height="130">
+
+        <h2 style = "color:rgb(0, 81, 255);" >Perfil de Usuario</h2>
+        <p style = "color:white;"><strong>Correo registrado:</strong> <span id="mostrar-correo">Cargando...</span></p>
+
+
+        <button class="BotonIngresar" id="abrirVentana"
+                type="button" onclick="abrirPopUpCuenta()">
+
+            <img src="Ingresar.png" alt="" width="160px" height="80px">
+
+        </button>
+
+    </header>
+
+    <div class = "Barritidirijilla"></div>
+
+    <div class = "Atajos_Barra">
+
+        <button class = "Atajo" onclick = IrPaginaPrincipal()>
+            <img src = "Casa.png" alt="" width="200" height="50">
+        </button>
+
+        <button class = "Atajo" onclick = IrGrande()>
+            <img src = "Grandes.png" alt="" width="200" height="50">
+        </button>
+
+        <button class = "Atajo" onclick = IrChicos()>
+            <img src = "Chicos.png" alt="" width="200" height="50">
+        </button>
+
+        <button class = "Atajo" onclick="IrAboutUs()">
+            <img src = "AboutUs.png" alt="" width="200" height="50">
+        </button>
+
+        <button class = "Atajo" onclick = IrReseñas()>
+            <img src = "Reseñas.png" alt="" width="200" height="50">
+        </button>
+
+        <button class = "Atajo" onclick = IrCarrito()>
+            <img src = "carrito.png" alt="" width="200" height="50">
+        </button>
+
+
+    </div>
+
+
+    <div class = "Barrita">
+        <h2 style = "color:rgb(255, 255, 255); ">Tu Carrito en Syryndy.com !!!</h2>
+    </div>
+
+
+    <!-- PRODUCTOS DEL CARRITO -->
+
+    <div class="contenedor-carrito">
+
+        <h1>Mis productos</h1>
+
+        <div id="listaCarrito">
+
+            <p>Cargando productos...</p>
+
+        </div>
+
+        <hr>
+
+        <h2>
+            Total a pagar:
+            <span id="totalCarrito">$0</span>
+        </h2>
+
+        <button type="button"
+                class="boton-vaciar"
+                onclick="vaciarCarrito()">
+
+            Vaciar carrito
+
+        </button>
+
+    </div>
+
+
+    <!-- DIRECCIÓN DE ENTREGA -->
+
+    <div class="contenedor-envio">
+
+        <h1>Datos de entrega</h1>
+
+        <p>
+            Completá los siguientes datos para indicarnos
+            dónde querés recibir tu pedido.
+        </p>
+
+        <form id="formularioEnvio">
+
+            <label>Nombre del destinatario:</label>
+
+            <input
+                type="text"
+                name="destinatario"
+                placeholder="Nombre completo"
+                required
+            >
+
+
+            <label>Dirección:</label>
+
+            <input
+                type="text"
+                name="direccion"
+                placeholder="Calle y número"
+                required
+            >
+
+
+            <label>Ciudad:</label>
+
+            <input
+                type="text"
+                name="ciudad"
+                placeholder="Ciudad"
+                required
+            >
+
+
+            <label>Código postal:</label>
+
+            <input
+                type="text"
+                name="codigoPostal"
+                placeholder="Código postal"
+                required
+            >
+
+
+            <label>País:</label>
+
+            <input
+                type="text"
+                name="pais"
+                placeholder="País de destino"
+                required
+            >
+
+
+            <p id="estadoSesion"></p>
+
+            <button
+                type="button"
+                class="boton-comprar-carrito"
+                onclick="finalizarCompra()">
+
+                Confirmar compra
+
+            </button>
+
+        </form>
+
+    </div>
+
+
+    <div style = "margin-top: 2%; background-color: rgb(0, 5, 68); display: flex; width: 30%; margin-left:35%;  " class= "marquesina-texto">
+        <div class="tenor-gif-embed" data-postid="3339576034676009932" data-share-method="host" data-aspect-ratio="1" data-width="80px"><a href="https://tenor.com/view/pochacco-dancing-pochacco-gif-3339576034676009932">Pochacco Dancing Pochacco Sticker</a>from <a href="https://tenor.com/search/pochacco-stickers">Pochacco Stickers</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+        <h1 style="color: white ; font-size: medium;">Productos de calidad con funciones nuevas y servicio tecnico Efectivo!!!</h1>
+        <div class="tenor-gif-embed" data-postid="3339576034676009932" data-share-method="host" data-aspect-ratio="1" data-width="80px"><a href="https://tenor.com/view/pochacco-dancing-pochacco-gif-3339576034676009932">Pochacco Dancing Pochacco Sticker</a>from <a href="https://tenor.com/search/pochacco-stickers">Pochacco Stickers</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+    </div>
+
+    <footer>
+        <div class="footer-contenedor">
+            <div class="footer-lado-izquierdo">
+                <h2>Syryndy</h2>
+                <p>Sea bienvenido a Syryndy.com, la página web en donde encontrara cualquier electrodomestico.</p>
+                <a href="" onclick="IrAboutUs()">Sobre Nosotros</a>
+            </div>
+
+            <div class="footer-lado-derecho">
+                <h2>¡Contactate con Nosotros!</h2>
+                <p>Nuestras oficinas se encuentran en Alvarez Thomas 800</p>
+                <a href="">Syryndy.Management@gmail.com</a>
+            </div>
+        </div>
+        <hr>
+        <div class="footer-parte-bajo">
+            <p>© 2026 Syryndy.com - Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

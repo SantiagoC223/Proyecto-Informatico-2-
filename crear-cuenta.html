@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="crear-cuenta.css">
+
+    <script src="inventario.js" defer></script>
+    <link rel="stylesheet" href="styleSANTI.css">
+    
+</head>
+<body>
+
+
+
+
+
+
+
+     <header class = "encabezado"> 
+        
+        <img  onclick = IrPaginaPrincipal() src = "Logo.png" alt="" width="200" height="130">
+
+        <h2 style = "color:rgb(0, 81, 255);" >Perfil de Usuario</h2>
+        <p style = "color:white;"><strong>Correo registrado:</strong> <span id="mostrar-correo">Cargando...</span></p>
+
+
+        <button class="BotonIngresar" id="abrirVentana"
+                type="button" onclick="abrirPopUpCuenta()">
+
+            <img src="Ingresar.png" alt="" width="160px" height="80px">
+
+        </button>
+
+    </header>
+
+    <dialog id="popUpCuenta" class="popup-cuenta">
+
+        <h1>¡Bienvenido a Syryndy!</h1>
+
+        <p>
+            Iniciá sesión para comprar nuestros productos
+            o registrate para crear una cuenta.
+        </p>
+
+        <hr>
+
+        <div >
+
+            <button type="button" onclick="IrRegistro()">
+                Registrarme
+            </button>
+
+            <button type="button" onclick="IrInicioSesion()">
+                Iniciar sesión
+            </button>
+
+        </div>
+
+        <button  type="button"
+                onclick="cerrarPopUpCuenta()">
+            Cerrar
+        </button>
+
+    </dialog>
+
+    
+
+    <div class = "Barritidirijilla"></div>
+
+    <div class = "Atajos_Barra">
+
+        <button class = "Atajo" onclick = IrPaginaPrincipal()>
+            <img src = "Casa.png" alt="" width="200" height="50">
+        </button>
+
+        <button class = "Atajo" onclick = IrGrande()>
+            <img src = "Grandes.png" alt="" width="200" height="50">
+        </button>
+
+        <button class = "Atajo" onclick = IrChicos()>
+            <img src = "Chicos.png" alt="" width="200" height="50">
+        </button>
+
+        <button class = "Atajo" onclick="IrAboutUs()">
+            <img src = "AboutUs.png" alt="" width="200" height="50">
+        </button>
+
+        <button class = "Atajo" onclick = IrReseñas()>
+            <img src = "Reseñas.png" alt="" width="200" height="50">
+        </button>
+
+        <button class = "Atajo" onclick = IrCarrito()>
+            <img src = "carrito.png" alt="" width="200" height="50">
+        </button>
+
+
+    </div>
+
+
+    <div class = "Barrita">
+        <h2 style = "color:rgb(255, 255, 255); ">Los Mejores Dispositivos electronicos del Mercado con punto de Encuentro o dejandolo en tu casa !!!</h2>
+    </div>
+
+
+    <div class="contenedor-sesion">
+        <div class="lado-izquierdo">
+            <div class="texto">
+                <h2>¡Crea tu cuenta!</h2>
+                <p>Disfruta de una experiencia personalizada, acceso a ofertas exclusivas y mucho mas.</p>
+            </div>
+        </div>
+        <div class="lado-derecho">
+            <div class="contenido">
+                <h2>Crear cuenta</h2>
+                <p>Completa tus datos para empezar a disfrutar todos los beneficios.</p>
+                <form id="form-registro">                  
+                    <div class="correo-electronico">
+                        <label for="correo">Correo electronico</label>
+                        <input type="email" id="correo" placeholder="tucorreo@ejemplo.com">
+                    </div>
+                    <div class="contrasena">
+                        <label for="contraseña">Contraseña</label>
+                        <input type="password" id="contraseña" placeholder="Minimo 8 caracteres">
+                    </div>
+                    <button type="submit">Crear cuenta</button>
+                </form>
+                <div class="crear-cuenta">
+                    <span>¿Ya tienes una cuenta?</span>
+                    <a href="inicio-sesion.html">Iniciar sesion</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script src="crear-cuenta.js"></script>
+
+    <div style = "margin-top: 2%; background-color: rgb(0, 5, 68); display: flex; width: 30%; margin-left:35%;  " class= "marquesina-texto">
+        <div class="tenor-gif-embed" data-postid="3339576034676009932" data-share-method="host" data-aspect-ratio="1" data-width="80px"><a href="https://tenor.com/view/pochacco-dancing-pochacco-gif-3339576034676009932">Pochacco Dancing Pochacco Sticker</a>from <a href="https://tenor.com/search/pochacco-stickers">Pochacco Stickers</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+        <h1 style="color: white ; font-size: medium;">Productos de calidad con funciones nuevas y servicio tecnico Efectivo!!!</h1>
+        <div class="tenor-gif-embed" data-postid="3339576034676009932" data-share-method="host" data-aspect-ratio="1" data-width="80px"><a href="https://tenor.com/view/pochacco-dancing-pochacco-gif-3339576034676009932">Pochacco Dancing Pochacco Sticker</a>from <a href="https://tenor.com/search/pochacco-stickers">Pochacco Stickers</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+    </div>
+
+    <footer>
+        <div class="footer-contenedor">
+            <div class="footer-lado-izquierdo">
+                <h2>Syryndy</h2>
+                <p>Sea bienvenido a Syryndy.com, la página web en donde encontrara cualquier electrodomestico.</p>
+                <a href="" onclick="IrAboutUs()">Sobre Nosotros</a>
+            </div>
+
+            <div class="footer-lado-derecho">
+                <h2>¡Contactate con Nosotros!</h2>
+                <p>Nuestras oficinas se encuentran en Alvarez Thomas 800</p>
+                <a href="">Syryndy.Management@gmail.com</a>
+            </div>
+        </div>
+        <hr>
+        <div class="footer-parte-bajo">
+            <p>© 2026 Syryndy.com - Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    
+</body>
+</html>
